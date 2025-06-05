@@ -1,0 +1,54 @@
+<div class="bg-gray-900 p-4 min-h-screen flex items-center justify-center">
+    <div class="bg-gray-800 flex-1 flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:space-x-10 max-w-6xl p-4 md:p-6 sm:my-2 sm:mx-4 rounded-2xl">
+      <!-- Content -->
+      <div class="flex-1 px-2 sm:px-0">
+        <div class="flex justify-between items-center">
+          <h3 class="text-3xl font-extralight text-white/50">Hoteles</h3>
+        </div>
+        <!-- Buscador -->
+        <div class="bg-gray-900 px-2 py-4 my-2 rounded-xl space-x-2">
+          <nav>
+            <ul class="flex justify-end">
+              <li cals>
+                <a class="mx-1 flex h-9 w-9 p-0 items-center justify-center rounded-full bg-gray-800 text-sm text-white/40 hover:text-white hover:bg-gray-700 hover:smooth-hover hover:scale-90 duration-80 cursor-pointer"
+                  aria-label="previus" (click)="previusPage()">
+                  <span class="material-icons text-sm">
+                    < </span>
+                </a>
+                </li>
+                <li>
+                  <a class="mx-1 flex h-9 w-9 p-0 items-center justify-center rounded-full bg-gray-800 text-sm text-white/50 hover:text-white hover:bg-gray-700 hover:smooth-hover hover:scale-90 duration-80 cursor-pointer"
+                    aria-label="next" (click)="nextPage()">
+                    <span class="material-icons text-sm"> > </span>
+                  </a>
+                  </li>
+                  </ul>
+                </nav>
+        </div>
+        <!-- Lista de hoteles -->
+        <div class="mb-10 sm:mb-0 mt-10 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <!-- Hoteles -->
+        <!-- @if(!loading){
+            @for (user of usersList; track user) {
+            @defer (on viewport) {
+                <app-user-card [user]="user"></app-user-card>
+            } @placeholder {
+                <div class="relative group bg-gray-900 py-10 sm:py-20 px-4 flex justify-center space-y-2 items-center cursor-pointer rounded-md hover:smooth-hover hover:scale-95 duration-200 md:h-78">
+                    <div class="animate-spin inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                        role="status" aria-label="loading">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    </div>
+                    }}
+                    }@else {
+                    <div
+                        class="relative group bg-gray-900 py-10 sm:py-20 px-4 flex justify-center space-y-2 items-center cursor-pointer rounded-md hover:smooth-hover hover:scale-95 duration-200 md:h-78">
+                        <div class="animate-spin inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                            role="status" aria-label="loading">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+                } -->
+        </div>
+    </div>
+</div>
