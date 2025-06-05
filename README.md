@@ -83,7 +83,5 @@ Antes de ejecutar la aplicación, necesitarás generar la base de datos:
 ## Librerias Añadidas
 
 - **Ts-standar**: Para lintar el codigo y no tener errores al escribir.
-
 - **Tailwind**: Para crear los diseños de interfaces.
-
-- **Postcss**: Para poder instalar y configurar Tailwind en Angular.
+- **Postcss y Autoprefix**: Para poder instalar y configurar Tailwind en Angular.
