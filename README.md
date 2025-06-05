@@ -1,17 +1,3 @@
-<p align="center">
-  <img src="src/assets/logo.png" alt="Ávoristech" /><br />
-</p>
-
-# Prueba Técnica Angular 
-
-## Nota importante 🚨
-
-Este proyecto es parte de una prueba técnica propiedad de **Ávoris Corporación Empresarial**. Por favor, no compartas ni publiques este código de manera pública. Su distribución o divulgación sin autorización está estrictamente prohibida.
-
-Una vez hayas completado la prueba, por favor envía el resultado a través de un servicio de transferencia de archivos como WeTransfer o cualquier otro método acordado con el equipo de reclutamiento.
-
-¡Gracias por tu comprensión y cooperación!
-
 ## Descripción 📋
 
 El objetivo de esta prueba técnica es desarrollar una aplicación en Angular que muestre un listado de hoteles. La aplicación debe permitir a los usuarios filtrar los hoteles por nombre, categoría (estrellas), valoración y precio.
