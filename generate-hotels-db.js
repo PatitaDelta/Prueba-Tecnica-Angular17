@@ -10,7 +10,7 @@ const generateHotels = () => {
     hotels.push({
       id: faker.string.uuid(),
       name: `Hotel ${faker.word.words(2)}`,
-      image: faker.image.urlPlaceholder({ width: 240, height: 180, text: '' }),
+      image: `https://picsum.photos/240/180?random=${faker.number.int(100)}`,
       address: faker.location.streetAddress(),
       stars: faker.number.int({ min: 1, max: 5 }),
       rate: parseFloat(faker.number.float({ min: 0, max: 5, fractionDigits: 1 })),
