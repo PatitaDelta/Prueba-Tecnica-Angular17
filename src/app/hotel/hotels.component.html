@@ -46,11 +46,11 @@
         @if (!loading) {
           @for (hotel of hotels; track $index) {
             <div class="relative group bg-gray-900 py-10 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:smooth-hover hover:scale-95 duration-200 min-h-[420px]">
-              <div class="flex items-center pb-10">
+              <div class="flex items-center pb-5">
                 <p class="bg-gray-800 min-w-8 text-center text-white text-sm font-semibold p-1.5 rounded-sm">{{hotel.rate}}</p>
               </div>
               @defer (on timer(1s)) {
-                <img class="w-20 h-20 object-cover object-center rounded-full" loading="lazy" src="{{hotel.image}}" alt="hotel" />
+                <img class="w-20 h-20 object-cover inline-flex justify-center rounded-full" loading="lazy" src="{{hotel.image}}" alt="hotel" />
               }
               @placeholder{
                 <app-spinner class="w-20 h-20 inline-flex justify-center"></app-spinner>
