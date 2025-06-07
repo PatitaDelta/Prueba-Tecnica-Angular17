@@ -1,12 +1,12 @@
 import { Component } from '@angular/core'
-import { ListComponent } from '../utils/list/list.component'
 import { Hotel, HotelFilter, HotelPaginator } from './hotel.model'
 import { HotelService } from './hotel.service'
+import { CommonModule } from '@angular/common'
 
 @Component({
   selector: 'app-hotels',
   standalone: true,
-  imports: [ListComponent],
+  imports: [CommonModule],
   providers: [HotelService],
   templateUrl: './hotels.component.html'
 })
@@ -17,7 +17,7 @@ export class HotelsComponent {
   filter!: HotelFilter
   paginator: HotelPaginator = {
     page: 1,
-    perPage: 12,
+    perPage: 8,
     total: 0,
     totalPages: 0
   }
