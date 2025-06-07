@@ -2,11 +2,12 @@ import { Component } from '@angular/core'
 import { Hotel, HotelFilter, HotelPaginator } from './hotel.model'
 import { HotelService } from './hotel.service'
 import { CommonModule } from '@angular/common'
+import { SpinnerComponent } from '../utils/spinner/spinner.component'
 
 @Component({
   selector: 'app-hotels',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SpinnerComponent],
   providers: [HotelService],
   templateUrl: './hotels.component.html'
 })
@@ -17,7 +18,7 @@ export class HotelsComponent {
   filter!: HotelFilter
   paginator: HotelPaginator = {
     page: 1,
-    perPage: 8,
+    perPage: 4,
     total: 0,
     totalPages: 0
   }
@@ -48,14 +49,14 @@ export class HotelsComponent {
   }
 
   nextPage (): void {
-    if (this.paginator.page < this.paginator.totalPages) {
+    if (!this.loading && this.paginator.page < this.paginator.totalPages) {
       this.paginator.page = this.paginator.page + 1
       this.filterData()
     }
   }
 
   previusPage (): void {
-    if (this.paginator.page > 1) {
+    if (!this.loading && this.paginator.page > 1) {
       this.paginator.page = this.paginator.page - 1
       this.filterData()
     }

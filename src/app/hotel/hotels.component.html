@@ -42,57 +42,36 @@
       </div>
       <!-- lista de elementos -->
       <div
-        class="mb-10 sm:mb-0 mt-10 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        @if(!loading){
+      class="mb-10 sm:mb-0 mt-10 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        @if (!loading) {
           @for (hotel of hotels; track $index) {
-            @defer (on viewport) {
-              <div class="relative group bg-gray-900 py-10 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:smooth-hover hover:scale-95 duration-200 min-h-80">
-                  <div class="flex items-center pb-10">
-                    <p class="bg-gray-800 min-w-8 text-center text-white text-sm font-semibold p-1.5 rounded-sm">{{hotel.rate}}</p>
-                  </div>
-                  @if (hotel.image) {
-                    <img class="w-20 h-20 object-cover object-center rounded-full" src="{{hotel.image}}" alt="hotel" />
-                  }@else {
-                    <svg aria-hidden="true" role="img" class="min-h-20 min-w-20 text-white/50 hover:text-white rounded-full mx-auto"
-                        preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
-                        <path fill="currentColor"
-                            d="M172 120a44 44 0 1 1-44-44a44 44 0 0 1 44 44Zm60 8A104 104 0 1 1 128 24a104.2 104.2 0 0 1 104 104Zm-16 0a88 88 0 1 0-153.8 58.4a81.3 81.3 0 0 1 24.5-23a59.7 59.7 0 0 0 82.6 0a81.3 81.3 0 0 1 24.5 23A87.6 87.6 0 0 0 216 128Z">
-                        </path>
-                    </svg>
-                  }
-                  <h4 class="text-white text-2xl font-bold capitalize text-center">{{hotel.name}}</h4>
-                  <div class="flex items-center">
-                    <p class="me-1 text-sm font-bold text-gray-900 dark:text-white">{{hotel.stars}}</p>
-                    <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                      <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-                    </svg>
-                  </div>
-                  <p class="text-white/50">{{hotel.address}}</p>
-                  <p class="text-white/50">{{hotel.price}}€</p>
+            <div class="relative group bg-gray-900 py-10 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:smooth-hover hover:scale-95 duration-200 min-h-[420px]">
+              <div class="flex items-center pb-10">
+                <p class="bg-gray-800 min-w-8 text-center text-white text-sm font-semibold p-1.5 rounded-sm">{{hotel.rate}}</p>
               </div>
-            }
-            @placeholder {
-              <div
-                class="relative group bg-gray-900 py-10 sm:py-20 px-4 flex justify-center space-y-2 items-center cursor-pointer rounded-md hover:smooth-hover hover:scale-95 duration-200 md:h-78">
-                <div
-                  class="animate-spin inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
-                  role="status" aria-label="loading">
-                  <span class="sr-only">Loading...</span>
-                </div>
+              @defer (on timer(1s)) {
+                <img class="w-20 h-20 object-cover object-center rounded-full" loading="lazy" src="{{hotel.image}}" alt="hotel" />
+              }
+              @placeholder{
+                <app-spinner class="w-20 h-20 inline-flex justify-center"></app-spinner>
+              }
+              <h4 class="text-white text-2xl font-bold capitalize text-center">{{hotel.name}}</h4>
+              <div class="flex items-center">
+                <p class="me-1 text-sm font-bold text-gray-900 dark:text-white">{{hotel.stars}}</p>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
               </div>
-            }
+              <p class="text-white/50">{{hotel.address}}</p>
+              <p class="text-white/50">{{hotel.price}}€</p>
+            </div>
           }
         }
         @else {
-          <div
-            class="relative group bg-gray-900 py-10 sm:py-20 px-4 flex justify-center space-y-2 items-center cursor-pointer rounded-md hover:smooth-hover hover:scale-95 duration-200 md:h-78">
-            <div
-              class="animate-spin inline-block w-10 h-10 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
-              role="status" aria-label="loading">
-              <span class="sr-only">Loading...</span>
-            </div>
+          <div class="relative group min-h-[420px] bg-gray-900 py-10 px-4 flex flex-col justify-center space-y-2 items-center cursor-pointer rounded-md hover:smooth-hover hover:scale-95 duration-200">
+            <app-spinner class="w-20 h-20 inline-flex justify-center"></app-spinner>
           </div>
         }
+        </div>
       </div>
-    </div>
   </div>
