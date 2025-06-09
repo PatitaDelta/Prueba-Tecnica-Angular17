@@ -24,7 +24,7 @@ export class HotelsComponent {
 
   // Inicio
 
-  initPaginator (): void {
+  private initPaginator (): void {
     this.paginator = {
       page: 1,
       perPage: 12,
@@ -33,7 +33,7 @@ export class HotelsComponent {
     }
   }
 
-  clearFilters (): void {
+  private clearFilters (): void {
     this.filter = {
       name: '',
       rate: [1, 2, 3, 4, 5],
@@ -60,7 +60,7 @@ export class HotelsComponent {
     this.filterData()
   }
 
-  filterData (): void {
+  private filterData (): void {
     this.loading = true
     if (
       this.filter.name === '' &&
@@ -76,14 +76,14 @@ export class HotelsComponent {
 
   // Paginacion
 
-  nextPage (): void {
+  public nextPage (): void {
     if (!this.loading && this.paginator.page < this.paginator.totalPages) {
       this.paginator.page = this.paginator.page + 1
       this.filterData()
     }
   }
 
-  previusPage (): void {
+  public previusPage (): void {
     if (!this.loading && this.paginator.page > 1) {
       this.paginator.page = this.paginator.page - 1
       this.filterData()
@@ -92,13 +92,13 @@ export class HotelsComponent {
 
   // Filtros
 
-  filterName (name: string): void {
+  public filterName (name: string): void {
     this.filter.name = name
     this.initPaginator()
     this.filterData()
   }
 
-  filterRate (checked: boolean, rate: number): void {
+  public filterRate (checked: boolean, rate: number): void {
     if (checked) {
       this.filter.rate.push(rate)
     } else {
@@ -111,14 +111,14 @@ export class HotelsComponent {
     this.filterData()
   }
 
-  filterValoration (valoration: number): void {
+  public filterValoration (valoration: number): void {
     this.filter.valoration = valoration
 
     this.initPaginator()
     this.filterData()
   }
 
-  filterPrice (price: number): void {
+  public filterPrice (price: number): void {
     this.filter.price = price
 
     this.initPaginator()

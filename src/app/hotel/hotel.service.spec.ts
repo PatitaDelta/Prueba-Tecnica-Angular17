@@ -10,11 +10,7 @@ describe('HotelService', () => {
     service = TestBed.inject(HotelService)
   })
 
-  it('getData', () => {
-    expect(service.doFilter()).toBeTruthy()
-  })
-
-  it('filter', () => {
-    // expect(service.doFilter({}, {})).toBeTruthy()
+  it('filter isHotelInFilter', () => {
+    expect(service.filterHotels({})).toBeTruthy()
   })
 })

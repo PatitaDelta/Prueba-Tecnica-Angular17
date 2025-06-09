@@ -28,15 +28,16 @@ export class HotelService {
     )
   }
 
-  filterHotels (config: ListConfig): void {
+  public filterHotels (config: ListConfig): void {
     this.hotels$.next(config)
   }
 
-  private isHotelInFilter (hotel: Hotel, config: ListConfig): boolean {
+  public isHotelInFilter (hotel: Hotel, config: ListConfig): boolean {
     if (config.filter !== undefined) {
-      hotel.name = hotel.name.toLocaleLowerCase()
+      const name = hotel.name.toLocaleLowerCase()
+      const address = hotel.address.toLocaleLowerCase()
       if (
-        (hotel.name.includes(config.filter.name) || hotel.address.includes(config.filter.name)) &&
+        (name.includes(config.filter.name.toLocaleLowerCase()) || address.includes(config.filter.name.toLocaleLowerCase())) &&
         config.filter?.rate?.includes(hotel.stars) &&
         hotel.rate >= config.filter.valoration &&
         hotel.price <= config.filter.price
