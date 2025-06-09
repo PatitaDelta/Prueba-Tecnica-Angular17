@@ -36,7 +36,7 @@ export class HotelService {
     if (config.filter !== undefined) {
       hotel.name = hotel.name.toLocaleLowerCase()
       if (
-        hotel.name.includes(config.filter.name) &&
+        (hotel.name.includes(config.filter.name) || hotel.address.includes(config.filter.name)) &&
         config.filter?.rate?.includes(hotel.stars) &&
         hotel.rate >= config.filter.valoration &&
         hotel.price <= config.filter.price

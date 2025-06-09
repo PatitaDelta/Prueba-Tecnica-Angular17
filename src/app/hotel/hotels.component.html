@@ -209,7 +209,7 @@
             <p
               class="bg-gray-800 min-w-8 text-center text-white text-sm font-semibold p-1.5 rounded-sm">{{hotel.rate}}</p>
           </div>
-          @defer (on timer(1s)) {
+          @defer (on timer(0.7s)) {
           <img
             class="w-20 h-20 object-cover inline-flex justify-center rounded-full"
             loading="lazy" src="{{hotel.image}}" alt="hotel" />
