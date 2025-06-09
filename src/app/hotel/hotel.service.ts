@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Hotel, HotelFilter, ListConfig } from './hotel.model'
+import { Hotel, ListConfig } from './hotel.model'
 import { HttpClient } from '@angular/common/http'
 import { map, Observable, Subject, switchMap, take } from 'rxjs'
 
@@ -18,8 +18,8 @@ export class HotelService {
         (config) => this.http.get<Hotel[]>(this.apiUrl).pipe(
           take(1),
           map((hotelList) => {
-            if (Object.values(config).length > 0 && config.filter != null) {
-              return hotelList.filter((hotel) => this.isHotelInFilter(hotel, config.filter))
+            if (Object.values(config).length > 0) {
+              return hotelList.filter((hotel) => this.isHotelInFilter(hotel, config))
             }
             return hotelList
           })
@@ -32,18 +32,18 @@ export class HotelService {
     this.hotels$.next(config)
   }
 
-  private isHotelInFilter (element: Hotel, filter: HotelFilter): boolean {
-    // Nombre
-    if (element.name.includes(filter.name)) { return true }
-
-    // Categoria
-    if (filter.category.includes(element.stars)) { return true }
-
-    // Valoracion
-    if (element.rate >= filter.valoration) { return true }
-
-    // Precio
-    if (element.price <= filter.price) { return true }
+  private isHotelInFilter (hotel: Hotel, config: ListConfig): boolean {
+    if (config.filter !== undefined) {
+      hotel.name = hotel.name.toLocaleLowerCase()
+      if (
+        hotel.name.includes(config.filter.name) &&
+        config.filter?.rate?.includes(hotel.stars) &&
+        hotel.rate >= config.filter.valoration &&
+        hotel.price <= config.filter.price
+      ) {
+        return true
+      }
+    }
 
     return false
   }

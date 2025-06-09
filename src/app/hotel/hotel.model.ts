@@ -12,7 +12,7 @@ export type RegisterHotel = Omit<Hotel, 'id'>
 
 export interface HotelFilter {
   name: string
-  category: number[]
+  rate: number[]
   valoration: number
   price: number
 }
@@ -25,6 +25,6 @@ export interface HotelPaginator {
 }
 
 export interface ListConfig {
-  paginator: HotelPaginator
-  filter: HotelFilter
+  paginator?: HotelPaginator
+  filter?: HotelFilter
 }
