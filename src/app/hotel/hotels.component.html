@@ -10,7 +10,7 @@
       <div class="bg-gray-900 px-2 py-4 my-2 rounded-xl space-x-2">
         <ul class="flex">
           <!-- Buscador -->
-          <li class="flex-none relative">
+          <li class="flex-none relative w-80">
             <div
               class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none text-white/40">
               <svg class="w-4 h-4" aria-hidden="true"
@@ -27,37 +27,7 @@
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white/40 dark:focus:ring-gray-500 dark:focus:border-gray-500"
               required />
           </li>
-          <!-- Filtro de estrellas -->
-          <li class="w-full flex">
-            <div class="flex items-center me-4">
-              <input id="inline-checkbox" type="checkbox" value
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <label for="inline-checkbox"
-                class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Inline
-                1</label>
-            </div>
-            <div class="flex items-center me-4">
-              <input id="inline-2-checkbox" type="checkbox" value
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <label for="inline-2-checkbox"
-                class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Inline
-                2</label>
-            </div>
-            <div class="flex items-center me-4">
-              <input checked id="inline-checked-checkbox" type="checkbox" value
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <label for="inline-checked-checkbox"
-                class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Inline
-                checked</label>
-            </div>
-            <div class="flex items-center">
-              <input disabled id="inline-disabled-checkbox" type="checkbox"
-                value
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <label for="inline-disabled-checkbox"
-                class="ms-2 text-sm font-medium text-gray-400 dark:text-gray-500">Inline
-                disabled</label>
-            </div>
+          <li class="w-full ">            
           </li>
           <!-- Botones paginacion -->
           <li>
@@ -88,22 +58,96 @@
             </nav>
           </li>
         </ul>
-        <ul class="py-4">
-          <li class="flex w-full justify-between">
+        <ul class="py-4 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Filtro de estrellas -->
+          <li>
+            <span 
+              class="block text-sm font-medium text-gray-900 dark:text-white pb-2">
+              Estrellas
+            </span>
+            <div class=" flex justify-evenly">
+              <div class="flex items-center me-4">
+                <input id="inline-checkbox" type="checkbox" value
+                  class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded-sm focus:ring-gray-500 dark:focus:ring-gray-500 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="inline-checkbox"
+                  class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 flex gap-1">
+                  1           
+                  <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                    viewBox="0 0 22 20">
+                    <path
+                      d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                </label>
+              </div>
+              <div class="flex items-center me-4">
+                <input id="inline-checkbox" type="checkbox" value
+                  class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded-sm focus:ring-gray-500 dark:focus:ring-gray-500 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="inline-checkbox"
+                  class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 flex gap-1">
+                  2          
+                  <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                    viewBox="0 0 22 20">
+                    <path
+                      d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                </label>
+              </div>
+              <div class="flex items-center me-4">
+                <input id="inline-checkbox" type="checkbox" value
+                  class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded-sm focus:ring-gray-500 dark:focus:ring-gray-500 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="inline-checkbox"
+                  class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 flex gap-1">
+                  3          
+                  <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                    viewBox="0 0 22 20">
+                    <path
+                      d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                </label>
+              </div>
+              <div class="flex items-center me-4">
+                <input id="inline-checkbox" type="checkbox" value
+                  class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded-sm focus:ring-gray-500 dark:focus:ring-gray-500 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="inline-checkbox"
+                  class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 flex gap-1">
+                  5        
+                  <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                    viewBox="0 0 22 20">
+                    <path
+                      d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                </label>
+              </div>
+            </div>
+            
+          </li>
+          <!-- Valoración -->
+          <li>
             <label for="default-range"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              class="block text-sm font-medium text-gray-900 dark:text-white">
               Valoración
             </label>
-            <input id="default-range" type="range" value="0"
-              class="w-50 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+            <input id="labels-range-input" type="range" value="1000" min="0" max="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+            <div class="flex justify-between w-full">
+              <span class="text-white text-sm/5">0</span>
+              <span class="text-white text-sm/5">5</span>
+            </div>
           </li>
-          <li class="flex w-full ">
+          <!-- Precio -->
+          <li>
             <label for="default-range"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              class="block text-sm font-medium text-gray-900 dark:text-white">
               Precio
             </label>
-            <input id="default-range" type="range" value="0" min="50" max="1000"
-              class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+            <input id="labels-range-input" type="range" value="1000" min="50" max="1000" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+            <div class="flex justify-between w-full">
+              <span class="text-white text-sm/5">50€</span>
+              <span class="text-white text-sm/5">1000€</span>
+            </div>
           </li>
         </ul>
       </div>
